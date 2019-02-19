@@ -28,10 +28,13 @@
   "devDependencies": {
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
-    "jest": "^24.1.0"
-  }
+    "jest": "^24.1.0",
+    "redux-mock-store": "^1.5.3"
+  },
   "jest": {
-  "setupTestFrameworkScriptFile": "__tests__/setup/setup_enzyme.js",
-  "testPathIgnorePatterns": ["__tests__/setup/"]
-}
+    "setupTestFrameworkScriptFile": "__tests__/setup/setup_enzyme.js",
+    "testPathIgnorePatterns": [
+      "__tests__/setup/"
+    ]
+  }
 }
