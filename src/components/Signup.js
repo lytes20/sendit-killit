@@ -11,7 +11,7 @@ import {
   onRegisterUser
 } from "../actions";
 
-class Signup extends Component {
+export class Signup extends Component {
 
   fNameChanged = e => {
     const firstname = e.target.value
@@ -69,38 +69,52 @@ class Signup extends Component {
         <h3>Signup</h3>
         <input
           placeholder="Firstname"
+          id="Firstname"
+          name="Firstname"
           value={firstname}
           onChange={this.fNameChanged.bind(this)}
         /><br /><br />
         <input
           placeholder="Lastname"
+          id="Lastname"
+          name="Lastname"
           value={lastname}
           onChange={this.lNameChanged.bind(this)}
         /><br /><br />
         <input
           placeholder="Username"
+          id="Username"
+          name="Username"
           value={username}
           onChange={this.usernameChanged.bind(this)}
         /><br /><br />
         <input
           placeholder="Email"
+          id="Email"
+          name="Email"
           value={email}
           onChange={this.emailChanged.bind(this)}
         /><br /><br />
         <input
           placeholder="Phone"
+          id="Phone"
+          name="Phone"
           value={phone}
           onChange={this.phoneChanged.bind(this)}
         /><br /><br />
         <input
           type="password"
           placeholder="Password"
+          id="Password"
+          name="Password"
           value={password}
           onChange={this.passwordChanged.bind(this)}
         /><br /><br />
         <input
           type="password"
           placeholder="Confirm Password"
+          id="Confirm_password"
+          name="Confirm_password"
           value={confirm_password}
           onChange={this.confirmPasswordChanged.bind(this)}
         /><br /><br />
