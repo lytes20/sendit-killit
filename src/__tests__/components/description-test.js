@@ -10,4 +10,4 @@ describe("Description Component", () => {
     expect(div.length).toBe(1);
     expect(h2.length).toBe(1);
   })
-})
+});

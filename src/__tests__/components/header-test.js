@@ -13,4 +13,4 @@ describe("Header Component", () => {
     expect(img.length).toBe(1);
     expect(ul.length).toBe(1);
   })
-})
+});
