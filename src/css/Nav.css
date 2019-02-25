@@ -69,7 +69,7 @@ body {
 footer {
   margin-top: 40px;
   min-height: 190px;
-  background-color: #444;
+  background-color: rgba(68, 68, 68, 0.95);
   color: #fff;
   font-size: 14px;
   padding: 10px;

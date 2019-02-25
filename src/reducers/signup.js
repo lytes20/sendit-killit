@@ -8,7 +8,9 @@ const INITIAL_STATE = {
   phone: "",
   password: "",
   confirm_password: "",
-  error: ''
+  error: '',
+  loading: false,
+  redirect: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -36,6 +38,15 @@ export default (state = INITIAL_STATE, action) => {
 
     case types.ERROR:
       return { ...state, error: action.payload }
+
+    case types.REGISTER_START:
+      return { ...state, error: '', loading: true }
+
+    case types.REGISTER_SUCCESS:
+      return { ...state, error: '', loading: false, redirect: true }
+
+    case types.REGISTER_FAILED:
+      return { ...state, error: action.payload, loading: false }
 
     default:
       return state;

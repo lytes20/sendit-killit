@@ -62,11 +62,12 @@ export class Signup extends Component {
       phone,
       password,
       confirm_password,
-      error
+      error,
+      loading
     } = this.props.signupData;
 
     return (
-      <div className='form'>
+      <div className="form">
         <form>
           <h3>Signup</h3>
           <input
@@ -120,8 +121,14 @@ export class Signup extends Component {
             value={confirm_password}
             onChange={this.confirmPasswordChanged.bind(this)}
           />
-          <div className='error-msg'>{error}</div>
-          <button className='btn' onClick={this.registerUser.bind(this)}>Register</button>
+          <div className="error-msg">{error}</div>
+          { loading ? (
+            <div className="loader" />
+          ) : (
+            <button className="btn" onClick={this.registerUser.bind(this)}>
+              Register
+            </button>
+          ) }
         </form>
       </div>
     );
