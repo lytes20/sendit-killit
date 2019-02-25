@@ -7,7 +7,7 @@ class Login extends Component {
       username: '',
       password: '',
       // eslint-disable-next-line react/no-unused-state
-      errors: {
+      formErrors: {
         username: '',
         password: ''
       }
@@ -16,6 +16,9 @@ class Login extends Component {
   // handling onchange event
   handleonChange = event =>{
     event.preventDefault();
+    const {name, value}= event.target;
+    const {formErrors} = this.state;
+    this.setState({formErrors, [name]: value });
   };
  
   // form on submit method
@@ -27,10 +30,10 @@ class Login extends Component {
     const {username,password} = this.state;
     return (
       <div>
-        <div className="row" />
-        <div className="col-lg-4">
+        <div className="row">
+        <div className="col-lg-6">
         </div>
-        <div className="col-lg-4">
+        <div className="col-lg-4 mt-5">
           <form  method='post' onSubmit= {this.handleOnsubmit}>
             <div className="form-group">
               <label> Username</label>
@@ -38,6 +41,7 @@ class Login extends Component {
                 type="text"
                 name="username"
                 className="form-control"
+                placeholder="username"
                 value={username}
                 onChange={this.handleonChange}
               />
@@ -46,15 +50,20 @@ class Login extends Component {
               <label>password</label>
               <input
                 type="text"
-                name="username"
+                name="password"
                 className="form-control"
+                placeholder="password"
                 value={password}
                 onChange ={this.handleonChange} 
                 />
             </div>
+            <div className="form-group">
+            <button className="btn btn-outline-danger"> Login</button>
+            </div>
           </form>
         </div>
-        <div className="col-lg-4">
+        <div className="col-lg-2">
+        </div>
         </div>
       </div>
     );
