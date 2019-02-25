@@ -1,13 +1,14 @@
-
 import React from 'react';
 import { shallow } from 'enzyme';
 import Home from '../../components/Home';
 
 // eslint-disable-next-line no-undef
-it('renders renders the home component', () => {
-  // eslint-disable-next-line react/jsx-filename-extension
-  const wrapper = shallow(<Home />);
-  const text = <h2> the is the home component</h2>;
+describe('Home component', () => {
   // eslint-disable-next-line no-undef
-  expect(wrapper.contains(text)).toBe(true);
+  it('should render the h1', () => {
+    // eslint-disable-next-line react/jsx-filename-extension
+    const component = shallow(<Home />);
+    // eslint-disable-next-line no-undef
+    expect(component.contains(<h2> the is the home component</h2>)).toBe(true);
+  });
 });
