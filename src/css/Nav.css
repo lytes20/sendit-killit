@@ -1,0 +1,103 @@
+html,
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f9f9f9; 
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #444;
+  clear: both;
+  z-index: 10000;
+}
+
+.header div {
+  float: left;
+}
+
+.logo {
+  margin: 10px;
+}
+
+.header ul {
+  float: right;
+  margin: 30px 48px 16px;
+}
+
+.header ul li {
+  display: inline-block;
+  padding-left: 32px;
+  color: aliceblue
+}
+
+.header ul li:hover {
+  cursor: pointer;
+  color: #e78200
+}
+
+.header ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.header ul li a:hover {
+  color: #e78200;
+}
+
+@media screen and (max-width: 628px) {
+  .logo {
+    margin: 16px 0px 16px 10px;
+  }
+
+  .header ul {
+    margin: 30px 10px 16px 0px;
+  }
+  
+  .header ul li {
+    padding-left: 10px;
+  }
+}
+
+/* FOOTER STYLES */
+footer {
+  margin-top: 40px;
+  min-height: 190px;
+  background-color: #444;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  letter-spacing: 0.5px
+}
+
+footer h4 {
+  text-align: center
+}
+
+footer ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0 auto
+}
+
+footer ul li {
+  margin-bottom: 6px
+}
+
+.listitemlink:hover {
+  color: #e78200;
+  cursor: pointer;
+  text-decoration: underline
+}
+
+.copyryt {
+  text-align: center;
+  /* color: #0b7910; */
+  font-size: 16px
+}

@@ -1,0 +1,128 @@
+.contain {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/pic2.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.logo {
+  height: 48px;
+  margin: 20px auto;
+}
+
+.login-page {
+  width: 360px;
+  padding: 2% 0 0;
+  margin: auto;
+}
+
+.form {
+  /* position: relative; */
+  z-index: 1;
+  background: rgba(14, 102, 85, 0.5);
+  max-width: 360px;
+  padding: 15px 15px 7px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form input {
+  outline: none;
+  font-family: sans-serif;
+  outline: 1;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 9px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#Confirm_password {
+  margin-bottom: 0
+}
+
+.btn {
+  text-decoration: none;
+  display: block;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  background: #4caf50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #fff;
+  margin: 0 0 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: none
+}
+
+.btn:hover {
+  background: #43a047;
+  color: #fff;
+  /* cursor: default */
+}
+
+.form .message,
+.form .message-admin {
+  margin: 15px 0 0;
+  color: aliceblue;
+  font-size: 14px;
+}
+
+.error-msg {
+  color: rgb(180, 40, 40);
+  padding: 5px 0;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.2px;
+  font-weight: bold
+}
+
+.lnk {
+  text-decoration: none;
+  color: #e78200;
+}
+
+.link {
+  text-decoration: none;
+  color: #e78200;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* .form .register-form {
+  display: none
+} */
+
+h2 {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  /* color: #daaf78 */
+  color: #e78200;
+}
+
+h3 {
+  color: rgba(260, 260, 260, 0.6);
+  margin-bottom: 15px
+}
+
+.desc h2 {
+  color: #0b7910;
+  text-align: center;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.6);
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.desc div {
+  color: #e78200;
+  font-size: 22px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  background-color: rgba(260, 260, 260, 0.1); 
+}

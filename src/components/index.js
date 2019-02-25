@@ -1,10 +1,10 @@
-import React from "react";
-import Signup from "./Signup";
+import React from 'react';
+import Home from './Home';
 
-export default props => {
+export default () => {
   return (
     <div>
-      <Signup />
+      <Home />
     </div>
   );
 };
