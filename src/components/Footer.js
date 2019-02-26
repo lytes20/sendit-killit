@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 export default () => {
   return (
     <footer>
-      <Row>
+      <Row style={styles.rowStyles}>
         <Col>
           <ul>
             <li><h4>CONTACT US</h4></li>
@@ -30,9 +30,9 @@ export default () => {
             <li className='listitemlink'>Customs Clearance</li>
             <li className='listitemlink'>Project Forwarding</li>
           </ul>
-        </Col>
+        </Col> 
       </Row>
-      <Row style={styles.copyrytStyles}>
+      <Row style={{...styles.rowStyles, backgroundColor: '#333' }}>
         <Col />
         <Col><div className='copyryt'>Sendit © {new Date().getFullYear()}, ALL RIGHTS RESERVED</div></Col>
         <Col />
@@ -42,7 +42,8 @@ export default () => {
 }
 
 const styles = {
-  copyrytStyles: {
-    backgroundColor: '#333'
+  rowStyles: {
+    marginLeft: -10,
+    marginRight: -10,
   }
 }
