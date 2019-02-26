@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {LoginUser} from '../actions/loginAction'
 import {FormValidation} from '../utilities/formValidations';
 
 class Login extends Component {
@@ -32,24 +34,24 @@ class Login extends Component {
       break;
     }
     this.setState({formErrors, [name]: value });
-    console.log(this.state);
   };
- 
   // form on submit method
   handleOnsubmit = event => {
     event.preventDefault();
     const {username,password, formErrors}= this.state;
     if(FormValidation(formErrors,username,password)){
-      console.log(this.state);
+      const data = {
+        'username':username,
+        'password':password
+      };
+      this.props.LoginUser(data);
+      console.log(this.props.login);
     }else{
       this.setState({errors: 'please enter your username and password'});
-      console.log(this.state.errors);
     }
   };
-
   render() {
     const {username,password, errors, formErrors} = this.state;
-    
     return (
       <div>
         <div className="row">
@@ -72,7 +74,7 @@ class Login extends Component {
             <div className="form-group">
               <label>password</label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 className="form-control"
                 placeholder="password"
@@ -83,6 +85,7 @@ class Login extends Component {
             {formErrors.password.length >0 && (<span className="text text-danger">{formErrors.password}</span>)}
             <div className="mb-4">
               <span className="text text-danger">{errors}</span>
+                <span className="text text-danger">{this.props.login.message}</span>
             </div>
             <div className="form-group">
             <button className="btn btn-outline-danger"> Login</button>
@@ -96,4 +99,7 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+const mapStateToProps =state=>({
+  login: state.login.login_errors
+});
+export default connect(mapStateToProps, {LoginUser})(Login);

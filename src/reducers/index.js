@@ -1,5 +1,5 @@
 /* eslint-disable object-shorthand */
 import { combineReducers } from 'redux';
-import loginReducer from './loginReducer';
+import LoginReducer from './loginReducer';
 
-export default combineReducers({ loginReducer: loginReducer });
+export default combineReducers({ login: LoginReducer });
