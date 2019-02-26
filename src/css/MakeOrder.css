@@ -101,7 +101,8 @@ html,body {
     color: #ddd;
     font-family: sans-serif;
   }
-  
+
+
   .form-box select {
     outline: none;
     height: 50px;
@@ -215,7 +216,7 @@ html,body {
       margin-left: 20%;
     }
     .form-box select {
-      width: 55%;
+      width: 57%;
       margin-top: 10px;
     }
   }
@@ -317,4 +318,16 @@ html,body {
   .proceed_btn {
     padding-top: 22px;
   }
+
+  .success_message {
+    background-color: rgba(14, 102, 85, 0.5);
+    width: 892px;
+    color:white;
+  }
   
+
+  .error_message {
+    background-color: #F8D7DA;
+    width:892px;
+    color:red;
+  }

@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect  } from 'react-redux';
+import FlashMessage from 'react-flash-message';
+// import Place from 'react-algolia-places'
 import { showMakeOrderDialog } from '../actions/dialogs';
 import ConfirmDialog from '../components/Dialogs/ConfirmDialog';
+import Header from './Header';
+import Footer from './Footer';
 import  '../css/MakeOrder.css';
 
 
@@ -15,10 +19,13 @@ class CreateOrder extends React.Component {
             weight:''
         }
     }
+  // Function to show confirm Dialog
 
     showConfirmDialog() {
         this.props.showMakeOrderDialog();
     }
+
+    // Function to handle change in form values
 
     handleChange =  (event) => {
       const {name, value, type, checked} = event.target
@@ -30,7 +37,18 @@ class CreateOrder extends React.Component {
       this.setState({
           [name]: value
       }) 
+      // const {name, value}  = event.target;
+      //   this.setState({
+      //       [name]:value
+      //   })
     }
+
+    // Function to format the price to hav commas
+  formatNumber (num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
+
+    
 
     render() {
       const places = [
@@ -43,12 +61,37 @@ class CreateOrder extends React.Component {
         'Dar es salaam, Tanzania',
         'Dodoma, Tanzania',
       ];
-      let parcel_price = this.state.weight * 50000;
+  
+      let parcel_price = this.formatNumber(this.state.weight * 50000);
+     
+      let success_msg =  <FlashMessage duration={3000} persistOnHover={true}>
+                    <div className="alert success_message" role="alert">
+                         <p align="center"><strong>{this.props.newOrder.success_message}</strong></p>
+                    </div>
+                </FlashMessage>;
+      
+      let error_msg = <FlashMessage duration={3000} persistOnHover={true}>
+                       <div className="alert error_message" >
+                             <p align="center"><strong>{this.props.newOrder.error_message}</strong></p>
+                        </div>;
+                   </FlashMessage>;
+      
         return(
-             
-            <div>
-            {this.props.dialog.makeOrderDialog ? <ConfirmDialog parcel_order ={this.state} price={parcel_price}  /> : <div />}
+
+          <div>
+            <Header />
+           
+            {this.props.dialog.makeOrderDialog ? <ConfirmDialog parcel_order = {
+              { 
+	 
+                "parcel_weight":parseInt(this.state.weight),
+                "parcel_pickup_address":this.state.from_place,
+                "parcel_destination_address":this.state.final_destination
+             }
+            } price={parcel_price}  /> : <div />}
             <div className='contain'>
+            {this.props.newOrder.success_status ?  success_msg  : ''}
+            {this.props.newOrder.error_status ? error_msg  : ''}
               <h1>
                 Send Your Parcel
                 <span> Quick</span> &<span> Easy</span>
@@ -71,6 +114,12 @@ class CreateOrder extends React.Component {
                                 );
                               })}
                           </select>
+                          {/* <Place
+                              className="search_box"   
+                              name="final_destination"
+                              value={this.state.final_destination}
+                              onChange={this.handleChange.bind(this)}  /> */}
+                          
                        </div>
                        <div className="col-md-3">
                           <span className='too'>To: </span>
@@ -87,6 +136,11 @@ class CreateOrder extends React.Component {
                                   );
                                 })}
                           </select>
+                          {/* <Place className="search_box" 
+                                name="from_place"
+                                value={this.state.from_place}
+                                onChange={this.handleChange.bind(this)} 
+                          /> */}
                        </div>
                        <div className="col-md-3">
                           <span className='weight'>Weight (kg): </span>
@@ -111,6 +165,7 @@ class CreateOrder extends React.Component {
                  </div>
               </div>
             </div>
+            <Footer />
           </div>
         )
     }
@@ -125,4 +180,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps,{ showMakeOrderDialog })(CreateOrder);
+export default connect(mapStateToProps,{ showMakeOrderDialog})(CreateOrder);
