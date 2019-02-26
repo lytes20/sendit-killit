@@ -1,12 +1,33 @@
-import React,{ Component } from 'react';
+import React from 'react';
+import Description from './Description';
+import Signup from './Signup';
+import { Container, Row, Col } from 'react-bootstrap';
+import Header from './Header';
+import Footer from './Footer';
 
-class Home extends Component {
-    render(){
-        return(
-            <div>
-                <h2> the is the home component</h2>
-            </div>
-        );
-    }
-}
+const Home = () => {
+  return (
+    <div className="contain">
+      <Header />
+      <Container style={styles.containerStyles}>
+        <Row>
+          <Col>
+            <Description />
+          </Col>
+          <Col>
+            <Signup />
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
+    </div>
+  );
+};
+
+const styles = {
+  containerStyles: {
+    marginTop: 80,
+    paddingTop: 20,
+  }
+};
 export default Home;
