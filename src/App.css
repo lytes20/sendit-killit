@@ -31,3 +31,30 @@
     transform: rotate(360deg);
   }
 }
+
+.heading {
+  margin-top: 12em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.user-input {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  margin-left: 9em;
+}
+
+.form-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15em;
+  line-height: 1.5;
+}
