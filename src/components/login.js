@@ -57,12 +57,13 @@ class Login extends Component {
         <div className="row">
         <div className="col-lg-6">
         </div>
-        <div className="col-lg-4 mt-5">
-          <form  method='post' onSubmit= {this.handleOnsubmit}>
+          <div className="col-lg-4 mt-5">
+          <form  method='post' onSubmit= {this.handleOnsubmit}  >
             <div className="form-group">
               <label> Username</label>
               <input
                 type="text"
+                data-test="form-element"
                 name="username"
                 className="form-control"
                 placeholder="username"
