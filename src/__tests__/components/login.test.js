@@ -9,6 +9,10 @@ const setUp = (props = {}) => {
 };
 // eslint-disable-next-line no-undef
 describe('login Component', () => {
+  let component;
+  beforeEach(){
+    component = setUp();
+  }
   // eslint-disable-next-line no-undef
   it('login component renders without fail', () => {
     // eslint-disable-next-line react/jsx-filename-extension
@@ -16,7 +20,6 @@ describe('login Component', () => {
   });
   // eslint-disable-next-line no-undef
   it('test the form element', () => {
-    const component = setUp();
     const wrapper = component.find('.form-control');
   });
 });
