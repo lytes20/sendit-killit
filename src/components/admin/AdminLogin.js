@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AdminDashboard from './AdminDashboard';
 
 class AdminLogin extends Component {
   state = {
     username: '',
     passwordInput: '',
-    loginError: ''
+    loginError: '',
+    isLoggedIn: false
   };
 
   onChange = e => {
@@ -35,7 +38,7 @@ class AdminLogin extends Component {
         const loggedIn = res['login_message'];
         const token = loggedIn['token_generated'];
         const role = loggedIn['user_role'];
-        this.setState({ _token: token });
+        this.setState({ _token: token, isLoggedIn: true });
       });
   };
 
@@ -76,6 +79,19 @@ class AdminLogin extends Component {
             <br />
           </div>
         </div>
+        {/* {this.state.isLoggedIn ? (
+            <Redirect to="/admin/dashboard/" />
+          ) : (
+            <Redirect to="/admin/login" />
+          )} */}
+        <Switch>
+          <Router>
+            <>
+              <Route path="/admin/dashobard" exact stict component={AdminDashboard} />
+              <Route path="/admin/login" exact stict component={AdminLogin} />
+            </>
+          </Router>
+        </Switch>
       </React.Fragment>
     );
   }
