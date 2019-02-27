@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AdminDashboard from './AdminDashboard';
 
 class AdminLogin extends Component {
   state = {
@@ -79,19 +77,12 @@ class AdminLogin extends Component {
             <br />
           </div>
         </div>
+
         {/* {this.state.isLoggedIn ? (
-            <Redirect to="/admin/dashboard/" />
-          ) : (
-            <Redirect to="/admin/login" />
-          )} */}
-        <Switch>
-          <Router>
-            <>
-              <Route path="/admin/dashobard" exact stict component={AdminDashboard} />
-              <Route path="/admin/login" exact stict component={AdminLogin} />
-            </>
-          </Router>
-        </Switch>
+          <Redirect to="/admin/dashboard/" />
+        ) : (
+          <Redirect to="/admin/login" />
+        )} */}
       </React.Fragment>
     );
   }
