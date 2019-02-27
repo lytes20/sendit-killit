@@ -98,8 +98,12 @@ html,body {
   
   .form-box span {
     font-weight: bold;
-    color: #ddd;
+    color: black;
     font-family: sans-serif;
+  }
+
+  .color_span {
+    color:red;
   }
 
 

@@ -9,7 +9,9 @@ export default () => {
         <img src={Logo} className="logo" alt="Logo" />
       </div>
       <ul>
-        <li>Login</li>
+        <li>Home</li>
+        <li>Orders</li>
+        <li>Sign Out</li>
       </ul>
     </nav>
   );

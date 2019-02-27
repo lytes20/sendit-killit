@@ -9,7 +9,7 @@ import instagram from '../Images/instagram.png';
 export default () => {
   return (
     <footer>
-      <Row>
+      <Row style={styles.copyrytStyles}>
         <Col>
           <ul>
             <li><h4>CONTACT US</h4></li>
@@ -18,6 +18,13 @@ export default () => {
             <li>+256 312 347878</li>
             <li>info@sendit.com</li>
           </ul>
+
+          <ul>
+               <li><a href="facebook"><img src={facebook}  width="20px" height="20px" alt="Facebook" /></a></li>
+               <li><a href="twitter"><img src={twitter}  width="20px" height="20px" alt="Twitter" /></a></li>
+               <li><a href="youtube"><img src={youtube} width="20px" height="20px" alt="Youtube" /></a></li>
+               <li><a href="instagram"><img src={instagram}  width="20px" height="20px" alt="Instagram" /></a></li>
+           </ul>
         </Col>
         <Col>
           <ul>
@@ -37,16 +44,11 @@ export default () => {
           </ul>
         </Col>
       </Row>
-      <Row style={styles.copyrytStyles}>
+      <Row style={{...styles.copyrytStyles, backgroundColor:"#333"}}>
         <Col>
-           <ul>
-               <li><a href="facebook"><img src={facebook}  width="20px" height="20px" alt="Facebook" /></a></li>
-               <li><a href="twitter"><img src={twitter}  width="20px" height="20px" alt="Twitter" /></a></li>
-               <li><a href="youtube"><img src={youtube} width="20px" height="20px" alt="Youtube" /></a></li>
-               <li><a href="instagram"><img src={instagram}  width="20px" height="20px" alt="Instagram" /></a></li>
-           </ul>
+         
         </Col>
-        <Col><div className='copyryt'>Sendit © {new Date().getFullYear()}, ALL RIGHTS RESERVED</div></Col>
+        <Col><div className='copyryt' >Sendit © {new Date().getFullYear()}, ALL RIGHTS RESERVED</div></Col>
         <Col>
         
         </Col>
@@ -57,6 +59,8 @@ export default () => {
 
 const styles = {
   copyrytStyles: {
-    backgroundColor: '#000',
+    marginLeft:-5,
+    marginRight:-5
+
   }
 }

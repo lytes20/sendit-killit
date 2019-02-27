@@ -1,4 +1,10 @@
-import { NEW_PARCEL_ORDER, NEW_PARCEL_ORDER_SUCCESS_MESSAGE, NEW_PARCEL_ORDER_ERROR_MESSAGE }  from '../actions/index';
+import { 
+    NEW_PARCEL_ORDER, 
+    NEW_PARCEL_ORDER_SUCCESS_MESSAGE, 
+    NEW_PARCEL_ORDER_ERROR_MESSAGE,
+    CHANGE_FLASH_MESSAGE_STATUS
+
+}  from '../actions/index';
 
 
 const initialState = {
@@ -29,6 +35,12 @@ export default function postReducer(state = initialState, action){
                 error_status:true,
                 error_message:action.payload
           }
+        case  CHANGE_FLASH_MESSAGE_STATUS:
+            return {
+                ...state,
+                error_message:false,
+                success_status:false
+            }
              
         default:
           return state

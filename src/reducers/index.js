@@ -4,5 +4,5 @@ import dialogsReducer from './dialogs_reducer';
 
 export default combineReducers({
     newOrder: newOrderReducer,
-    dialogs: dialogsReducer,
+    dialogs: dialogsReducer
 })
