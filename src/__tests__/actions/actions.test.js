@@ -9,11 +9,14 @@ const mockStore = configureStore(middleWare);
 // eslint-disable-next-line no-undef
 describe('test login action', () => {
   // eslint-disable-next-line no-undef
+
+  // eslint-disable-next-line no-undef
   it('test login fetch request', () => {
     fetchMock.postOnce('http://127.0.0.1:5000/api/v1/auth/login', {
       body: { username: 'anyatibria', password: '0781901036' },
       headers: { 'content-type': 'application/json' }
     });
+    fetchMock.restore();
     // declaring the expected data
     const expectedAction = [
       {
@@ -22,16 +25,15 @@ describe('test login action', () => {
       }
     ];
     const store = mockStore({});
-    return store
-      .dispatch(
-        LoginUser({
-          username: 'anyatibria',
-          password: '0781901036'
-        })
-      )
-      .then(() => {
-        // eslint-disable-next-line no-undef
-        expect(store.getActions()).toEqual(expectedAction);
-      });
+    const storeDispatch = store.dispatch(
+      LoginUser({
+        username: 'anyatibria',
+        password: '0781901036'
+      })
+    );
+    storeDispatch.then(() => {
+      // eslint-disable-next-line no-undef
+      expect(store.getActions()).toEqual(expectedAction);
+    });
   });
 });
