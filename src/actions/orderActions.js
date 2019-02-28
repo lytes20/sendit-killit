@@ -3,13 +3,13 @@ import * as types from './types';
 
 export const createParcelOrder = (orderData) => dispatch => {
      
-    fetch('http://127.0.0.1:5000/api/v2/parcels', {
+    fetch('https://francissendit.herokuapp.com/api/v2/parcels', {
 
         method:'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "token":  localStorage.getItem("token")
+            "authToken":  localStorage.getItem("token")
         },
         body: JSON.stringify(orderData),
     })
@@ -38,6 +38,7 @@ export const createParcelOrder = (orderData) => dispatch => {
         
     )
 }
+
 
 export const removeFlashMessage = ()  => {
     return {
