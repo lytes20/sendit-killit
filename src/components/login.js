@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {LoginUser} from '../actions/loginAction'
 import {FormValidation} from '../utilities/formValidations';
 
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -45,7 +46,7 @@ class Login extends Component {
         'password':password
       };
       this.props.LoginUser(data);
-      console.log(this.props.login);
+      console.log(localStorage.getItem('authToken'));
     }else{
       this.setState({errors: 'please enter your username and password'});
     }
@@ -86,7 +87,7 @@ class Login extends Component {
             {formErrors.password.length >0 && (<span className="text text-danger">{formErrors.password}</span>)}
             <div className="mb-4">
               <span className="text text-danger">{errors}</span>
-                <span className="text text-danger">{this.props.login.message}</span>
+                <span className="text text-danger">{this.props.token === true ? '' : <p>{this.props.login.message}</p>}</span>
             </div>
             <div className="form-group">
             <button className="btn btn-outline-danger"> Login</button>
@@ -101,6 +102,7 @@ class Login extends Component {
   }
 }
 const mapStateToProps =state=>({
-  login: state.login.login_errors
+  login: state.login.login_errors,
+  token: state.login.accessToken
 });
 export default connect(mapStateToProps, {LoginUser})(Login);

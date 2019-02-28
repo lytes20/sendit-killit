@@ -1,4 +1,4 @@
-import { LOGIN_ERROR } from './types';
+import { LOGIN_ERROR, USER_LOGIN } from './types';
 // eslint-disable-next-line import/prefer-default-export
 export const LoginUser = userdata => dispatch => {
   // making request call to the api
@@ -10,10 +10,19 @@ export const LoginUser = userdata => dispatch => {
     body: JSON.stringify(userdata)
   })
     .then(response => response.json())
-    .then(data =>
-      dispatch({
-        type: LOGIN_ERROR,
-        payload: data
-      })
-    );
+    .then(data => {
+      // eslint-disable-next-line no-empty
+      if (data['access-token']) {
+        dispatch({ type: USER_LOGIN });
+        // eslint-disable-next-line no-undef
+        localStorage.setItem('authToken', data['access-token']);
+        // eslint-disable-next-line no-undef
+        console.log(localStorage.getItem('authToken'));
+      } else {
+        dispatch({
+          type: LOGIN_ERROR,
+          payload: data
+        });
+      }
+    });
 };
