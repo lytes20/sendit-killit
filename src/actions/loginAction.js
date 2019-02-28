@@ -16,8 +16,6 @@ export const LoginUser = userdata => dispatch => {
         dispatch({ type: USER_LOGIN });
         // eslint-disable-next-line no-undef
         localStorage.setItem('authToken', data['access-token']);
-        // eslint-disable-next-line no-undef
-        console.log(localStorage.getItem('authToken'));
       } else {
         dispatch({
           type: LOGIN_ERROR,
