@@ -1,15 +1,15 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import facebook from '../Images/facebook.png';
-import twitter from '../Images/twitter.png';
-import youtube from '../Images/youtube.png';
-import instagram from '../Images/instagram.png';
+import facebook from '../images/facebook.png';
+import twitter from '../images/twitter.png';
+import youtube from '../images/youtube.png';
+import instagram from '../images/instagram.png';
 
 
 export default () => {
   return (
     <footer>
-      <Row style={styles.copyrytStyles}>
+      <Row style={styles.rowStyles}>
         <Col>
           <ul>
             <li><h4>CONTACT US</h4></li>
@@ -44,7 +44,7 @@ export default () => {
           </ul>
         </Col>
       </Row>
-      <Row style={{...styles.copyrytStyles, backgroundColor:"#333"}}>
+      <Row style={{...styles.rowStyles, backgroundColor:"#333"}}>
         <Col>
          
         </Col>
@@ -58,9 +58,8 @@ export default () => {
 }
 
 const styles = {
-  copyrytStyles: {
-    marginLeft:-5,
-    marginRight:-5
-
+  rowStyles: {
+    marginLeft: -10,
+    marginRight: -10,
   }
 }

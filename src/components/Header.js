@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../Images/nav_logo.png';
+import Logo from '../images/nav_logo.png';
 import '../css/Nav.css';
 
 export default () => {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect  } from 'react-redux';
 import Place from 'react-algolia-places'
 import { showMakeOrderDialog } from '../actions/dialogs';
-import { removeFlashMessage } from '../actions/orderActions';
+import { removeFlashMessage } from '../actions';
 import ConfirmDialog from '../components/Dialogs/ConfirmDialog';
 import FlashMessageComponent from './FlashMessageComponent';
 import Header from './Header';
@@ -38,24 +38,18 @@ class CreateOrder extends React.Component {
       this.setState({
           [name]: value
       }) 
-      // const {name, value}  = event.target;
-      //   this.setState({
-      //       [name]:value
-      //   })
     }
 
     handleFromPlace = (event) => {
       this.setState({
           from_place:event.suggestion.value
       })
-      console.log(event.suggestion.value);
     }
 
     handleToPlace = (event) => {
       this.setState({
          final_destination:event.suggestion.value
       })
-      console.log(event.suggestion.value);
     }
 
     // Function to format the price to hav commas
