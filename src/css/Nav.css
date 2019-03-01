@@ -1,5 +1,6 @@
 html,
 body {
+  
   margin: 0;
   border: 0;
   padding: 0;
@@ -98,6 +99,13 @@ footer ul li {
 
 .copyryt {
   text-align: center;
-  /* color: #0b7910; */
-  font-size: 16px
+  color: #3A8A19;
+  font-size: 12px
+}
+
+
+li
+{
+  display: inline;
+  padding-right: 0.5em;
 }

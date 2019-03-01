@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux';
 import SignupReducer from './signup';
+import newOrderReducer from './new_order_reducer';
+import dialogsReducer from './dialogs_reducer';
 
 export default combineReducers({
-  Signup: SignupReducer
+    newOrder: newOrderReducer,
+    dialogs: dialogsReducer,
+    Signup: SignupReducer
+
 })
