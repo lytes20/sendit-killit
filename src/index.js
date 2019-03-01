@@ -11,6 +11,7 @@ import * as serviceWorker from './serviceWorker';
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
+  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
     <App />
   </Provider>,
