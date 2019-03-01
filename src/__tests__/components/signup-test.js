@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+// eslint-disable-next-line import/named
 import { Signup } from '../../components/Signup';
 
 // eslint-disable-next-line no-undef
