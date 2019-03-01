@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers/index';
-import 'bootstrap/dist/css/bootstrap.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReduxThunk from 'redux-thunk';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import App from "./components/CreateOrder";
+import * as serviceWorker from "./serviceWorker";
 
-const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+const store = createStore(reducers ,
+  compose(
+    applyMiddleware(ReduxThunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+   )
+   
+  );
+
 
 ReactDOM.render(
   // eslint-disable-next-line react/jsx-filename-extension
