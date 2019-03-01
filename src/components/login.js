@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {LoginUser} from '../actions/loginAction'
-import {FormValidation} from '../utilities/formValidations';
+
+// validation functions
+FormValidation = (formErrors, username, password) =>{
+  //validation for the form field values //#endregion
+  let valid = true;
+  Object.values(formErrors).forEach(val =>{
+    val.lemgth > 0 &&(valid = false);
+  });
+  // valid the username and password 
+  if(username==='' && password === ''){
+    valid = false;
+  }
+  return valid
+};
 
 
 class Login extends Component {
