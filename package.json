@@ -4,13 +4,10 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-<<<<<<< HEAD
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "fetch-mock": "^7.3.0",
     "jest": "^24.1.0",
-=======
->>>>>>> aa7199b853854e83cf53c8b9287d6138210e8a7f
     "jest-enzyme": "^7.0.1",
     "react": "^16.8.2",
     "react-algolia-places": "^0.1.2",
