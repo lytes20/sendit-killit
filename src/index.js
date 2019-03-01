@@ -18,12 +18,10 @@ const store = createStore(reducers ,
 
 
 ReactDOM.render(
-  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
     <App />
   </Provider>,
-  // eslint-disable-next-line no-undef
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
