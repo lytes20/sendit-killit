@@ -26,28 +26,33 @@ export default () => {
         </Col>
         <Col>
           <ul>
-            <li><h4>LATEST NEWS</h4></li>
-            <li className='listitemlink'>Three Ways Wholesale distribution can improve planning</li>
+            <li>
+              <h4>LATEST NEWS</h4>
+            </li>
+            <li className="listitemlink">Three Ways Wholesale distribution can improve planning</li>
             <li className='listitemlink'>Apply these 4 simple techniques to improve holiday sales for your small business</li>
           </ul>
         </Col>
         <Col>
           <ul>
-            <li><h4>SERVICES</h4></li>
-            <li className='listitemlink'>Transportation</li>
-            <li className='listitemlink'>Warehousing</li>
-            <li className='listitemlink'>Courier Services</li>
-            <li className='listitemlink'>Customs Clearance</li>
-            <li className='listitemlink'>Project Forwarding</li>
+            <li>
+              <h4>SERVICES</h4>
+            </li>
+            <li className="listitemlink">Transportation</li>
+            <li className="listitemlink">Warehousing</li>
+            <li className="listitemlink">Courier Services</li>
+            <li className="listitemlink">Customs Clearance</li>
+            <li className="listitemlink">Project Forwarding</li>
           </ul>
         </Col> 
       </Row>
       <Row style={{...styles.rowStyles, backgroundColor: '#333' }}>
         <Col />
-        <Col><div className='copyryt'>Sendit © {new Date().getFullYear()}, ALL RIGHTS RESERVED</div></Col>
+        <Col>
+          <div className="copyryt">Sendit ©{new Date().getFullYear()}, ALL RIGHTS RESERVED</div>
+        </Col>
         <Col />
       </Row>
     </footer>
   );
 };
-
