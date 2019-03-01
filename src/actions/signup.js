@@ -77,11 +77,17 @@ export const onRegisterUser = user => {
       })
         .then(response => response.json())
         .then(data => {
-          data['message'] || data['Message'] === 'You registered successfully, Please Login'
+          // eslint-disable-next-line no-unused-expressions
+          data.message || data.Message === 'You registered successfully, Please Login'
             ? dispatch({ type: types.REGISTER_SUCCESS })
-            : dispatch({ type: types.REGISTER_FAILED, payload: data['message'] || data['Message'] });
+            : dispatch({
+                type: types.REGISTER_FAILED,
+                payload: data.message || data.Message
+              });
         })
-        .catch(error => dispatch({ type: types.REGISTER_FAILED, payload: 'Please check your network connection' }));
+        .catch(error =>
+          dispatch({ type: types.REGISTER_FAILED, payload: 'Please check your network connection' })
+        );
     };
 
     const format = /[ !@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
