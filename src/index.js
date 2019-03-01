@@ -7,7 +7,8 @@ import ReduxThunk from 'redux-thunk';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+const store = createStore(reducers , applyMiddleware(ReduxThunk));
+
 
 ReactDOM.render(
   <Provider store={store}>
