@@ -11,7 +11,6 @@ class UserView extends Component {
             <div>
                 <Header/>
                 <UserComponent/>
-                
             </div> 
         );
     }
